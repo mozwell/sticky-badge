@@ -1,0 +1,26 @@
+@keyframes shake {
+	33% {
+		transform: translate(calc(var(--shake-cx) * 1), calc(var(--shake-cy) * 1));
+	}
+	66% {
+		transform: translate(
+			calc(var(--shake-cx) * -1),
+			calc(var(--shake-cy) * -1)
+		);
+	}
+}
+
+:host {
+	#drag-circle {
+		stroke: transparent;
+		stroke-width: 20px;
+		&.shake {
+			animation: shake linear 0.2s;
+		}
+	}
+	#fix-circle {
+		&.shake {
+			animation: shake linear 0.2s;
+		}
+	}
+}
